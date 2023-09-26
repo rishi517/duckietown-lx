@@ -1,0 +1,56 @@
+Netcat:
+1) Error 400 bad request
+<p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
+
+2) HTTP/1.1 200 OK
+Date: Mon, 25 Sep 2023 07:31:31 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-_annuvj0DRuSFKpp32sppQ' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+Server: gws
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: 1P_JAR=2023-09-25-07; expires=Wed, 25-Oct-2023 07:31:31 GMT; path=/; domain=.google.com; Secure
+Set-Cookie: AEC=Ackid1SRwHM9dpOM-MozkNdBqJuPBJ0WBsOOE0op_G9ejPRyEB95vcBlsd4; expires=Sat, 23-Mar-2024 07:31:31 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax
+Set-Cookie: NID=511=P-UrI5RLkAr8A0JqsXSQVA0ZUF9kbPvIKXLCzT7isCKUW2rGbglWEP0V0BQdA8rVOFTCPu1g9zdjvXav67IOkl2b4k4wt35ZJ5YzDrUfZBGA9RL_jrFcO0bGeN2ydvmPniU3fFnA4krut8UdszOFnxqGHyZM_SgPH-0uJW_rM64; expires=Tue, 26-Mar-2024 07:31:31 GMT; path=/; domain=.google.com; HttpOnly
+Accept-Ranges: none
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+
+526c
+*and then it sends a very large HTML page*
+
+This is a response header!
+
+3) no answer needed
+
+4) This is what sending a bad request to roscore looks like:
+<body>
+        <h1>Error response</h1>
+        <p>Error code: 400</p>
+        <p>Message: Bad request syntax ('hi').</p>
+        <p>Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.</p>
+    </body>
+
+This shows that roscore uses an HTTP communication protocol. I was able to figure this out by setting up roscore on my Ubuntu VM and by reading the ros documentation.
+
+
+Talking to your robot:
+1) You can set a unique hostname for your robot. Then, you can use mDNS to find the robot through the hostname; this allows you to connect to the robot
+without knowing its ip address
+
+Look Ma, no Internet!:
+
+ATTENTION: This assignment was due before the drone project is due. My drone isn't in a state where I can fully run the tests like finding the IP, so 
+my responses are based on intuition over actual results.
+
+1) The raspberry pi is acting as the DHCP Server
+2) I cannot run this, but I would run ifconfig after sshing into the pi and also run the same command on my laptop.
+3) We could flip it so the laptop is the wireless ap master, and the PI connects to the laptop. The range would be the same, because the devices are the same.
+
+4) 
+    a) The Pi can be the wireless ap master and the laptop can connect to it. 
+    b) The laptop can be the wireless ap master and the Pi can connect to it.
+    c) You can make your phone the wireless ap master and the Pi and basestation can communicate through the phone.

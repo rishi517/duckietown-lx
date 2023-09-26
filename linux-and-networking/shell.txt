@@ -1,0 +1,22 @@
+Standard Input:
+1) Cat is waiting for you to input something. When you type something like "hi" it will output "hi" back to the terminal. 
+You can also use a signal to terminate cat. 
+
+2) When you type a message into cat, cat is using stdin to read your message. It then spits out your message to the terminal using std-out. Ctrl-D sends the EOF
+signal to cat, telling it that the user is done sending input so it can terminate.
+
+Pipes:
+1) - echo "1" > one.txt
+   - echo "2" > two.txt
+   - echo "3" > three.txt
+
+2) ls | sort -r
+
+3) echo "Hello World" | cat
+
+4) echo "Hello World"
+
+Standard Error
+1) The contents of ls -a are in the txt file. On my system, -hippo is ignored by the terminal and nothing is printed to stderror. 
+However, if "-hippo" is replaced with "hippo", then "ls: cannot access 'hippo': No such file or directory" is printed to stderror.
+
