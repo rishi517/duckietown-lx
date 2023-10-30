@@ -34,7 +34,7 @@ This is a response header!
         <p>Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.</p>
     </body>
 
-This shows that roscore uses an HTTP communication protocol. I was able to figure this out by setting up roscore on my Ubuntu VM and by reading the ros documentation.
+This shows that roscore uses an HTTP (XML-RPC) communication protocol. I was able to figure this out by setting up roscore on my Ubuntu VM and by reading the ros documentation.
 
 
 Talking to your robot:

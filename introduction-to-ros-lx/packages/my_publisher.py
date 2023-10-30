@@ -8,13 +8,13 @@ import rospy
 from std_msgs.msg import String
 
 # TODO: fill in the message type
-MSG_TYPE = ...
+MSG_TYPE = String
 
 # TODO: set a rate at which you want the node to publish its messages
-PUB_RATE = ... # [Hz] 
+PUB_RATE = 1 # [Hz] 
 
 # TODO: write a message to whoever is listening to you
-MESSAGE_CONTENT = f"<WHAT DO YOU WANT TO SAY?>"
+MESSAGE_CONTENT = f"Hello World!"
 
 # you can change the name for the topic you will publish to with this variable
 TOPIC_NAME = 'chatter'
